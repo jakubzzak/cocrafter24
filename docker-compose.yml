@@ -31,10 +31,13 @@ services:
       - 8000:8000
     environment:
       - DATABASE_URL=postgres://postgres:postgres@db:5432/db
+      - LEGACY_BE_URL=http://legacy-backend:8003
       - S3_ENDPOINT=http://s3mock:9090
+      - S3_BUCKET=cocrafter-dev
     depends_on:
       - db
       - s3mock
+      - legacy-backend
     restart: always
 
 
