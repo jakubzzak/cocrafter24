@@ -8,12 +8,15 @@ The comments I left in the code are a quick expression of my thoughts on a parti
 
 ## Run
 
-After docker compose you need to run migrations and seed the DB.
-After that everything should be ready to go.
+As required, all you need to do to run the project is the following command
+
+```bash
+docker compose up
+```
 
 ## How long it took you to solve this?
 
-Together I took something over 6h. When I realized it was coming up on the 6th, I wrapped up what I had and added metadata (such as my thoughts and this readme). As I was told, it should have taken 2-4h, and at that moment it felt like cheating if I was going forward. There is always something to improve, make it look better, more efficient.. In the end its about the requirements.
+Together I took something over 6h, together with README about 7. When I realized it was coming up on the 6th, I wrapped up what I had and added metadata (such as my thoughts and this readme). As I was told, it should have taken 2-4h, and at that moment it felt like cheating if I was going forward. There is always something to improve, make it look better, more efficient.. In the end its about the requirements.
 
 ## How did you approach the problem?
 
@@ -34,7 +37,7 @@ I came across 4 major challenges (complex/time-consuming)
    I spent quite some time setting up express server and overall project structure, but I would argue its due to the fact that this is not part of our everyday tasks. These things you simply don't remember and usually keep a setup instructions (sources) saved somewhere. Most recently I've been working a lot with lambdas thus serverless was the #1 framework to go to. Lambdas are not the best solution for FE (scaling) but in the early stage with low traffic I would argue it could be a nice cost saver. Even more, serverless local is still not supported with docker.
 
 4. _CORS_
-   Although I confirmed I was sending correct response headers within the response, when running BE within a container these headers wouldn't be exposed. When I searched the common issues no one seemed to encounter the same issue, ever. This gave me an idea that building the container might be wrong and found out it was indeed the issue. Building on its own doesn't work, via docker compose it does.
+   Although I confirmed I was sending correct response headers within the response, when running BE within a container these headers wouldn't be exposed. When I searched the common issues no one seemed to encounter the same issue, ever. This gave me an idea that building the container might be wrong and found out it was indeed the issue. Building on its own somehow didn't work, via docker compose it did - possibly some cache troubles.
 
 ## What would you have done differently/ added it this feature would be shipped into production
 
